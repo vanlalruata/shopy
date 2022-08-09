@@ -78,3 +78,15 @@ CREATE TABLE IF NOT EXISTS `usertb`  (
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+# Screenshot
+
+![Dashboard](https://user-images.githubusercontent.com/20646204/183680398-e81d328b-8ed9-4027-a589-723428c3e547.png)
+![Detail Report](https://user-images.githubusercontent.com/20646204/183680435-77b01a0a-c353-4ba8-ab3a-2c479fec3849.png)
+![Expanded Menu](https://user-images.githubusercontent.com/20646204/183680488-2a7a4e4b-8eec-4f22-9a26-bb23613c01bb.png)
+![Memo](https://user-images.githubusercontent.com/20646204/183680494-f433ba75-c9e0-4572-aa29-d00187a2af33.PNG)
+![Particulars](https://user-images.githubusercontent.com/20646204/183680499-bce17084-3582-4c6d-8840-821c26eb8845.png)
+![Receipt](https://user-images.githubusercontent.com/20646204/183680505-c0b01443-d125-442b-a011-b7bd1c90b927.png)
+![Report](https://user-images.githubusercontent.com/20646204/183680513-2e33111c-e5ae-4a8c-8d71-7ee954112024.png)
+![Setting](https://user-images.githubusercontent.com/20646204/183680521-60f6efd4-5541-4eaf-b129-3c515f490b64.png)
+

@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72A95D27-2066-4484-953B-2C60419CCB5A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>shopy</RootNamespace>
+    <AssemblyName>shopy</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ShopyIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CMS\CMS\bin\Release\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutNag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutNag.Designer.cs">
+      <DependentUpon>AboutNag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cashMemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cashMemo.Designer.cs">
+      <DependentUpon>cashMemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionString.cs" />
+    <Compile Include="Controls\Material.cs" />
+    <Compile Include="Controls\MaterialCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialDivider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterializeFlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterializeLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterializeProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterializeRiseButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterializeTabSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialSingleLineTextField.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialToolStripRender.cs" />
+    <Compile Include="CustomerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerReport.Designer.cs">
+      <DependentUpon>CustomerReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GSTReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GSTReport.Designer.cs">
+      <DependentUpon>GSTReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionReport.Designer.cs">
+      <DependentUpon>TransactionReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutNag.resx">
+      <DependentUpon>AboutNag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cashMemo.resx">
+      <DependentUpon>cashMemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerReport.resx">
+      <DependentUpon>CustomerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTReport.resx">
+      <DependentUpon>GSTReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TransactionReport.resx">
+      <DependentUpon>TransactionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roboto-Medium.ttf" />
+    <None Include="Resources\Roboto-Regular.ttf" />
+    <None Include="Resources\W32_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_57.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_74.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_83.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_84.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_89.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_93.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_98.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W32_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShopyLogoFinal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShopyLogo.png" />
+    <None Include="Resources\ic_add_circle_outline_24.png" />
+    <None Include="Resources\ic_save_24.png" />
+    <None Include="Resources\ic_print_24.png" />
+    <None Include="Resources\ic_refresh_24.png" />
+    <None Include="Resources\ic_add_circle_128.png" />
+    <None Include="Resources\ic_event_128.png" />
+    <None Include="Resources\ic_dehaze_128.png" />
+    <None Include="Resources\ic_apps_128.png" />
+    <None Include="Resources\ic_save_128.png" />
+    <None Include="Resources\ic_highlight_remove_128.png" />
+    <None Include="Resources\ic_refresh_128.png" />
+    <None Include="Resources\ic_playlist_add_128.png" />
+    <None Include="Resources\ic_new_releases_128.png" />
+    <None Include="Resources\ic_arrow_back_128.png" />
+    <None Include="Resources\Vanlalruata Hnamte.png" />
+    <None Include="Resources\ic_keyboard_128.png" />
+    <Content Include="ShopyIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
